@@ -23,11 +23,72 @@ public class CipherWriter extends Writer {
 	@Override
 	public void write(char[] text) throws IOException {
 		
+		char[] cipheredChars = new char[text.length];
+		
+		// Loop through all characters.
+		for (int i = 0; i < text.length; i++) {
+			
+			char character = text[i];
+			
+			// Is the character lower case?
+			if (character >= 97 && character <= 122) {
+				
+				char cipheredCharacter = (char) (((character - 'a' + 1) % 26) + 'a');
+				cipheredChars[i] = cipheredCharacter;
+				
+			// Is the character upper case?
+			} else if (character >= 65 && character <= 90) {
+				
+				char cipheredCharacter = (char) (((character - 'A' + 1) % 26) + 'A');
+				cipheredChars[i] = cipheredCharacter;
+				
+			// Every other character should remain the same.
+			} else {
+				
+				cipheredChars[i] = character;
+				
+			}
+			
+		}
+
+		this.outputStreamWriter.write(cipheredChars);
+		this.outputStreamWriter.flush();
+		
 	}
 
 	@Override
 	public void write(char[] cbuf, int off, int len) throws IOException {
-		// TODO Auto-generated method stub
+		
+		char[] cipheredChars = new char[cbuf.length];
+		
+		// Loop through the desired characters.
+		for (int i = off; i < off + len; i++) {
+			
+			char character = cbuf[i];
+			
+			// Is the character lower case?
+			if (character >= 97 && character <= 122) {
+				
+				char cipheredCharacter = (char) (((character - 'a' + 1) % 26) + 'a');
+				cipheredChars[i] = cipheredCharacter;
+				
+			// Is the character upper case?
+			} else if (character >= 65 && character <= 90) {
+				
+				char cipheredCharacter = (char) (((character - 'A' + 1) % 26) + 'A');
+				cipheredChars[i] = cipheredCharacter;
+				
+			// Every other character should remain the same.
+			} else {
+				
+				cipheredChars[i] = character;
+				
+			}
+			
+		}
+		
+		this.outputStreamWriter.write(cipheredChars);
+		this.outputStreamWriter.flush();
 		
 	}
 	

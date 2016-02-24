@@ -17,7 +17,7 @@ public class Main {
 		cipherWriter = new CipherWriter(outputStreamWriter);
 		
 		try {
-			cipherWriter.write("Lucas Dilts 123");
+			cipherWriter.write("Hellow World");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -27,6 +27,26 @@ public class Main {
 		
 		try {
 			cipherWriter.write("Hello World", 3, 3);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("\n");
+		
+		char[] characterArray = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'};
+		
+		try {
+			cipherWriter.write(characterArray);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("\n");
+		
+		try {
+			cipherWriter.write(characterArray, 3, 3);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
