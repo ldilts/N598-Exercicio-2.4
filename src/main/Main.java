@@ -17,7 +17,7 @@ public class Main {
 		cipherWriter = new CipherWriter(outputStreamWriter);
 		
 		try {
-			cipherWriter.write("Hellow World");
+			cipherWriter.write("Hello World");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,6 +35,17 @@ public class Main {
 		System.out.println("\n");
 		
 		char[] characterArray = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'};
+//		char[] characterArray = { 'A', 'E', 'I', 'O', 'U' };
+			
+//			{ 'B', 'C', 'D', 'F',
+//				'G', 'H', 'J', 'K', 'L', 'M',
+//	            'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z' };
+			
+//			{ 'a', 'e', 'i', 'o', 'u' };
+		
+//			{ 'b', 'c', 'd', 'f',
+//				'g', 'h', 'j', 'k', 'l', 'm',
+//	            'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
 		
 		try {
 			cipherWriter.write(characterArray);
